@@ -1,7 +1,7 @@
 class Assessment < ApplicationRecord
-  belongs_to :user
-  belongs_to :tournament
-  belongs_to :player
+  belongs_to :user, dependent: :destroy
+  belongs_to :tournament, dependent: :destroy
+  belongs_to :player, dependent: :destroy
 
   validates :rating, presence: true
   validates :assessment_type, presence: true
