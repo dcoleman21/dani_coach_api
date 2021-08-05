@@ -18,4 +18,11 @@
 # Teams
 @team1 = Team.create!(name: "Orlando Blaze", age_group: "N/A")
 @team2 = Team.create!(name: "Ohio All Stars", age_group: "N/A")
-@team2 = Team.create!(name: "Mile High Magic", age_group: "N/A")
+@team3 = Team.create!(name: "Mile High Magic", age_group: "N/A")
+
+# Players
+@player1 = Player.create!(first_name: "Tim", last_name: "Smith", height: 72, weight: 188, birthday: "2006-02-23", graduation_year: 2024, position: "Shooting Guard", recruit: true)
+@player2 = Player.create!(first_name: "Dan", last_name: "Holland", height: 75, weight: 201, birthday: "2005-02-23", graduation_year: 2023, position: "Center", recruit: true)
+@player3 = Player.create!(first_name: "Scott", last_name: "Thompson", height: 70, weight: 175, birthday: "2007-02-23", graduation_year: 2025, position: "Point Guard", recruit: true)
+@player4 = Player.create!(first_name: "Omar", last_name: "Brown", height: 71, weight: 182, birthday: "2006-07-23", graduation_year: 2024, position: "Shooting Guard", recruit: true)
+@player5 = Player.create!(first_name: "Olaf", last_name: "Schliner", height: 73, weight: 190, birthday: "2007-04-23", graduation_year: 2025, position: "Forward", recruit: true)
