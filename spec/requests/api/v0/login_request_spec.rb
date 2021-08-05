@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Login API' do
   describe 'happy paths' do
     it 'can ensure a user is authenticated with JWT' do
-      user = User.create(email: 'sample.coach@mobile.edu', password: 'samplepassword')
+      user = User.create(first_name: 'Dani', last_name: 'Coleman', email: 'dani.coach@mobile.edu', password: '1234', cell_phone: '', signature: '', internal_email: 'dani.mycollege@localhost:3001', token: SecureRandom.hex)
 
       headers = {
         'Content-Type': 'application/json',
@@ -23,7 +23,6 @@ describe 'Login API' do
       parsed = JSON.parse(response.body, symbolize_names: true)
       # I want an auth_token key and a message key
       # I want auth_token key to_not be empty
-      require "pry"; binding.pry
     end
 
     it 'logs in with case insenitive email check'
