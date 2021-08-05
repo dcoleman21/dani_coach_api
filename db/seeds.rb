@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+@tournament = FactoryBot.create(:tournament)
+5.times do
+  FactoryBot.create(tournament: @tournament)
+end
