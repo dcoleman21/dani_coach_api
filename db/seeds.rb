@@ -17,7 +17,12 @@ assessment3 = Assessment.create!(rating: 4, user_id: user3.id, tournament_id: to
 assessment4 = Assessment.create!(rating: 8, user_id: user1.id, tournament_id: tournament2.id, player_id: player4.id, assessment_type: "tournament")
 assessment5 = Assessment.create!(rating: 6, user_id: user2.id, tournament_id: tournament3.id, player_id: player5.id, assessment_type: "tournament")
 
-# Tournements
+# Notes
+note1 = Note.create!(user_id: user1.id, note: "Great outside shooting.", assessment_id: assessment4.id)
+note2 = Note.create!(user_id: user2.id, note: "Deffense was solid.", assessment_id: assessment3.id)
+note3 = Note.create!(user_id: user3.id, note: "Definitely a top pick.", assessment_id: assessment1.id)
+
+# Tournaments
 tournament1 = Tournament.create!(name: "The Orange Classic", city: "Orlando", state: "FL", start_date: "2021-09-05")
 tournament2 = Tournament.create!(name: "The Turkey Classic", city: "Cleveland", state: "OH", start_date: "2021-11-05")
 tournament3 = Tournament.create!(name: "High School All American Showcase Fall", city: "Denver", state: "CO", start_date: "2021-10-05")
