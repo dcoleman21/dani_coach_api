@@ -10,6 +10,13 @@ user1 = User.create!(first_name: "Dani", last_name: "Coleman", email: "dani@myco
 user2 = User.create!(first_name: "Tom", last_name: "Jones", email: "tom@mycollege.edu", password: "password")
 user3 = User.create!(first_name: "Gloria", last_name: "Billings", email: "gloria@mycollege.edu", password: "coach1")
 
+# Assessments
+assessment1 = Assessment.create!(rating: 5, user_id: user1.id, tournament_id: tournament1.id, player_id: player2.id, assessment_type: "tournament")
+assessment2 = Assessment.create!(rating: 7, user_id: user2.id, tournament_id: tournament2.id, player_id: player3.id, assessment_type: "tournament")
+assessment3 = Assessment.create!(rating: 4, user_id: user3.id, tournament_id: tournament3.id, player_id: player1.id, assessment_type: "tournament")
+assessment4 = Assessment.create!(rating: 8, user_id: user1.id, tournament_id: tournament2.id, player_id: player4.id, assessment_type: "tournament")
+assessment5 = Assessment.create!(rating: 6, user_id: user2.id, tournament_id: tournament3.id, player_id: player5.id, assessment_type: "tournament")
+
 # Tournements
 tournament1 = Tournament.create!(name: "The Orange Classic", city: "Orlando", state: "FL", start_date: "2021-09-05")
 tournament2 = Tournament.create!(name: "The Turkey Classic", city: "Cleveland", state: "OH", start_date: "2021-11-05")
