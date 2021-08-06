@@ -1,7 +1,7 @@
 class Tournament < ApplicationRecord
-  has_many :tournament_teams
-  has_many :teams, through: :tournament_teams
-  has_many :players, through: :teams
+  has_many :tournament_teams, dependent: :destroy
+  has_many :teams, through: :tournament_teams, dependent: :destroy
+  has_many :players, through: :teams, dependent: :destroy
 
   validates :name, presence: true
   validates :city, presence: true
