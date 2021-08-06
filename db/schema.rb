@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_05_214939) do
+ActiveRecord::Schema.define(version: 2021_08_06_164239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 2021_08_05_214939) do
     t.boolean "recruit", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "team_id", null: false
+    t.index ["team_id"], name: "index_players_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -57,6 +59,15 @@ ActiveRecord::Schema.define(version: 2021_08_05_214939) do
     t.string "coach"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tournament_teams", force: :cascade do |t|
+    t.bigint "team_id", null: false
+    t.bigint "tournament_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_tournament_teams_on_team_id"
+    t.index ["tournament_id"], name: "index_tournament_teams_on_tournament_id"
   end
 
   create_table "tournaments", force: :cascade do |t|
@@ -82,4 +93,7 @@ ActiveRecord::Schema.define(version: 2021_08_05_214939) do
   add_foreign_key "assessments", "users"
   add_foreign_key "notes", "assessments"
   add_foreign_key "notes", "users"
+  add_foreign_key "players", "teams"
+  add_foreign_key "tournament_teams", "teams"
+  add_foreign_key "tournament_teams", "tournaments"
 end
