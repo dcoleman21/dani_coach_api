@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v0 do
       # resource :users, only: [:create]
       # post "/login", to: "users#login"
+      resources :tournements
       get "/tournaments", to: "tournaments#index"
     end
   end
