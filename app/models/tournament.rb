@@ -1,4 +1,8 @@
 class Tournament < ApplicationRecord
+  has_many :tournament_teams
+  has_many :teams, through: :tournament_teams
+  has_many :players, through: :teams
+
   validates :name, presence: true
   validates :city, presence: true
   validates :state, length: { maximum: 2 }, presence: true
