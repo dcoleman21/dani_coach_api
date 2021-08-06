@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Tournaments API' do
   describe 'Happy Path' do
-    it "returns tournament info in JSON format" do
+    it "returns all tournament info in JSON format" do
       tournament = Tournament.create!(name: "The Orange Classic", city: "Orlando", state: "FL", start_date: "2021-09-05")
       team = Team.create!(name: "Orlando Blaze", age_group: "N/A")
       tournament_team = TournamentTeam.create!(tournament: tournament, team: team)
@@ -71,5 +71,26 @@ describe 'Tournaments API' do
       expect(tournament_relationships[:players][:data][0]).to have_key(:type)
       expect(tournament_relationships[:players][:data][0][:type]).to be_a(String)
     end
+  end
+
+  it "returns a single tournaments attending teams info in JSON format" do
+    tournament = Tournament.create!(name: "The Orange Classic", city: "Orlando", state: "FL", start_date: "2021-09-05")
+    team = Team.create!(name: "Orlando Blaze", age_group: "N/A")
+    tournament_team = TournamentTeam.create!(tournament: tournament, team: team)
+    player = Player.create!(first_name: "Tim", last_name: "Smith", height: 72, weight: 188, birthday: "2006-02-23", graduation_year: 2024, position: "Shooting Guard", recruit: true, team: team)
+
+    headers = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+
+    request_body = {
+      'tournaments': tournament,
+      'teams': team,
+      'players': player
+    }
+
+    get "/api/v0/tournaments/#{tournament.id}", headers: headers, params: JSON.generate(request_body)
+    tournament = JSON.parse(response.body, symbolize_names: true)
   end
 end
