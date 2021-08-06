@@ -102,7 +102,6 @@ describe 'Tournaments API' do
     expect(response).to be_successful
     expect(response.status).to eq(200)
     tournament = JSON.parse(response.body, symbolize_names: true)
-    # require "pry"; binding.pry
     expect(tournament).to be_a(Hash)
     expect(tournament).to have_key(:data)
     expect(tournament[:data]).to be_a(Hash)
