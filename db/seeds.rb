@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 TournamentTeam.destroy_all
+Tournament.destroy_all
 Player.destroy_all
 Team.destroy_all
-Tournament.destroy_all
 Note.destroy_all
 Assessment.destroy_all
 User.destroy_all
@@ -32,6 +32,8 @@ team3 = Team.create!(name: "Mile High Magic", age_group: "N/A")
 tournament_team1 = TournamentTeam.create!(tournament: tournament1, team: team1)
 tournament_team2 = TournamentTeam.create!(tournament: tournament2, team: team2)
 tournament_team3 = TournamentTeam.create!(tournament: tournament3, team: team3)
+tournament_team4 = TournamentTeam.create!(tournament: tournament1, team: team2)
+tournament_team5 = TournamentTeam.create!(tournament: tournament1, team: team3)
 
 # Players
 player1 = Player.create!(first_name: "Tim", last_name: "Smith", height: 72, weight: 188, birthday: "2006-02-23", graduation_year: 2024, position: "Shooting Guard", recruit: true, team: team1)
