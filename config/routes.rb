@@ -3,8 +3,9 @@ Rails.application.routes.draw do
     namespace :v0 do
       # resource :users, only: [:create]
       # post "/login", to: "users#login"
-      resources :tournements
+      # resources :tournaments
       get "/tournaments", to: "tournaments#index"
+      get "/tournaments/:id", to: "tournaments#show"
     end
   end
 end
