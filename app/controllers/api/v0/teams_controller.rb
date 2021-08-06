@@ -4,6 +4,6 @@ class Api::V0::TeamsController < ApplicationController
     teams = tournament.teams
     options = {}
     options[:include] = [:players]
-    rendor json: TeamSerializer.new(teams, options)
+    render json: TeamSerializer.new(teams, options)
   end
 end
