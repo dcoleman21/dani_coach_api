@@ -7,9 +7,9 @@ Rails.application.routes.draw do
         resources :teams, only: [:index]
       end
       # story #4
-      # api/v0/assessments?included=assessments
+      # api/v0/assessments?included=players
       resources :assessments, only: [:create]
-      
+
       # resources :players
     end
   end
