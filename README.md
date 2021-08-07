@@ -4,7 +4,7 @@
 
 ## Overview
 
-The scope of this API was to show how I follow documentation, break it down and my overall approach whe a project is given to me. Here are the sprint details:
+The scope of this API was to show how I follow documentation, break it down and my overall approach when a project is given to me. Here are the sprint details:
 ```
 It’s a new sprint and you have been assigned the task of starting work on a new API which will be feeding a iOS mobile app that college coaches will use to perform assessments of athletes at different events.  A separate front end team will be working on the mobile application, while your task is to build out a Rails 6 API to feed data. 
 
