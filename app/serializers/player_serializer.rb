@@ -9,5 +9,4 @@ class PlayerSerializer
              :graduation_year,
              :position,
              :recruit
-
 end
