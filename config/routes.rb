@@ -7,11 +7,10 @@ Rails.application.routes.draw do
         resources :teams, only: [:index]
       end
       # story #4
-      # api/v0/players/id/assessments
-      # resources :players do
-      #   #assessment controller
-      #   resources :assessments, only: [:index]
-      # end
+      # api/v0/assessments?included=assessments
+      resources :assessments, only: [:create]
+      
+      # resources :players
     end
   end
 end
