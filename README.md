@@ -93,17 +93,44 @@ Below you will see the current table relationships
 
 ## Endpoints
 
-These are the endpoints that are currently built out
+These are the endpoints that are currently built out.
 
 ```
-get '/api/v0/tournaments'
-get "/api/v0/tournaments/#{tournament.id}?included=teams"
-get "/api/v0/tournaments/#{tournament.id}/teams?included=players"
+get '/tournaments'
+get "/tournaments/id?included=teams"
+get "/tournaments/id/teams?included=players"
 ```
 
 ### Expected Responses
 
-To see the expected responses, please refer to the file titled `Api Calls/Responses`. Inside you will file a markdown file with all of the endpoints and corresponding responses.
+To see the expected responses, please refer to the file titled `Api Calls Responses`. Inside you will file a markdown file with all of the endpoints and corresponding responses.
 
 [back to top](#table-of-contents)
 
+## Testing
+
+There should be 39 passing tests
+
+To run all tests use
+```
+bundle exec rspec
+```
+
+To run all model tests use
+```
+bundle exec rspec spec/models
+```
+
+To run request tests use
+```
+bundle exec rspec spec/requests/api/v0/teams_request_spec.rb
+bundle exec rspec spec/requests/api/v0/tournaments_request_spec.rb
+```
+
+[back to top](#table-of-contents)
+
+## Authors
+
+- **Dani Coleman** - [GitHub Profile](https://github.com/dcoleman21) - [LinkedIn](https://www.linkedin.com/in/dcoleman-21/)
+
+[back to top](#table-of-contents)
