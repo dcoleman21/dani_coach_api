@@ -26,8 +26,8 @@ You have been given the initial API design specification to work from.  This is 
 ## Table of Contents
   - [Setup](#setup)
   - [Schema](#schema)
-  - [Testing](#testing)
   - [Endpoints](#endpoints)
+  - [Testing](#testing)
   - [Authors](#authors)
 
 
@@ -80,6 +80,30 @@ gem 'jwt'
 
 You will need to install the gems by running `bundle install`.
 * Install Figaro with `bundle exec figaro install` to create an `application.yml` file locally (this will need to be updated with any needed ENV variables!!!)(example: SOMETHING_API_KEY: 89798273429sadlfj332)
+
+[back to top](#table-of-contents)
+
+## Schema
+
+Below you will see the current table relationships
+
+<img width="700" alt="Coach API Schema" src="https://user-images.githubusercontent.com/60626984/128724507-453a7884-ff9c-4aa9-955b-529bd0216ae9.png">
+
+[back to top](#table-of-contents)
+
+## Endpoints
+
+These are the endpoints that are currently built out
+
+```
+get '/api/v0/tournaments'
+get "/api/v0/tournaments/#{tournament.id}?included=teams"
+get "/api/v0/tournaments/#{tournament.id}/teams?included=players"
+```
+
+### Expected Responses
+
+To see the expected responses, please refer to the file titled `Api Calls/Responses`. Inside you will file a markdown file with all of the endpoints and corresponding responses.
 
 [back to top](#table-of-contents)
 
